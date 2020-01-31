@@ -38,7 +38,7 @@ describe('POST /api/auth/register', () => {
     })
 
 })
-let token
+
 describe('POST /api/auth/login', () => {
     beforeEach(async () => {
         await db('users').truncate()
@@ -53,6 +53,7 @@ describe('POST /api/auth/login', () => {
       })
    
     })
+    
     it('returns 401', () => {
         let user = { username: 'test', password: 'test'}
         return request(server).post('/api/auth/login')
@@ -63,4 +64,3 @@ describe('POST /api/auth/login', () => {
     })
 
 })
-
