@@ -53,6 +53,14 @@ describe('POST /api/auth/login', () => {
       })
    
     })
+    it('returns 401', () => {
+        let user = { username: 'test', password: 'test'}
+        return request(server).post('/api/auth/login')
+        .send(user)
+        .then(res => {
+            expect(res.status).toBe(401)
+        })
+    })
 
 })
 
